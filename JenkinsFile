@@ -1,0 +1,41 @@
+pipeline {
+ agent any
+ stages {
+     stage (" Build IOS XRv") {
+         parallel {
+             stage ('build Home XRv') {
+              steps{
+                 echo 'Building Home XRv'
+                 //sh "ansible-playbook /opt/ansible/create-vm.yml --check"
+              }
+             }
+          stage ('build CDN XRv') {
+           steps{
+               echo 'Builing CDN XRv'
+           }
+          }        
+         }
+     }
+  
+  stage ('build MAL') {
+   steps{
+       echo 'Building MAL'
+   }
+  }
+  stage ('Input - ISP Network') {
+   steps{
+       echo 'Getting input from ISP'
+   }
+  }
+  stage ('Build/Distribute Policy') {
+      steps{
+          echo 'Build and distribute policy'   
+      }
+  }
+  stage ('test') {
+   steps{
+       echo 'Testing'
+   }
+  }
+ }
+}
