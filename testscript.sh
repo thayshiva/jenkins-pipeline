@@ -2,4 +2,4 @@
 echo "this script is from github"
 NUMBER=$(($NUMBERONE + $NUMBERTWO))
 echo "$NUMBER"
-echo "Thayz"
+echo "Thayz - first update"
