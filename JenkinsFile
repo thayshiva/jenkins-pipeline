@@ -35,6 +35,8 @@ pipeline {
   stage ('test') {
    steps{
        echo 'Testing Testing Testing'
+       sleep 30
+       echo "Woke up"
    }
   }
  }
